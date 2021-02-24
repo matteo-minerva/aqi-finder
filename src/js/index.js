@@ -1,7 +1,7 @@
 const API_KEY = process.env.API_KEY;
 const axios = require("axios");
 
-class Iaqi {
+class Station {
     constructor() {
         let data = {
             name: "",
@@ -30,10 +30,7 @@ class Iaqi {
     setData(newObj) {
         if (newObj) {
             this.data = { ...newObj };
-            console.log(this.data);
-            return;
         }
-        return console.log("Errore da setData()");
     }
 
     manageInput(e, ...args) {
@@ -45,21 +42,24 @@ class Iaqi {
                 baseUrl += `${args[0]}`;
                 input.value = "";
                 baseUrl += `/?token=${API_KEY}`;
-                this.getResponse(baseUrl);
-            } else alert("Please insert a valid value");
+            } else {
+                alert("Please insert a valid value");
+            }
         }
 
-        if (args.length == 2) {
+        if (args.length === 2) {
             baseUrl += `geo:${args[0]};${args[1]}`;
             baseUrl += `/?token=${API_KEY}`;
-            this.getResponse(baseUrl);
         }
+
+        this.getResponse(baseUrl);
     }
 
     async getResponse(url) {
         try {
             const response = await axios.get(url);
-            if (response.status === 200) {
+
+            if (response.data.status === "ok") {
                 const { data } = await response.data;
 
                 const newObj = {
@@ -85,11 +85,13 @@ class Iaqi {
                     : (responseSection.style.display = "block");
 
                 responseSection.scrollIntoView();
-            } else alert("Error: ", response.message);
+            }
+
+            if (response.data.data === "Over quota")
+                alert("Quota limit reached");
+            if (response.data.data === "Invalid key") alert("Invalid API key");
         } catch (error) {
-            if (error.response) alert(error);
-            if (error.request) alert(error);
-            else alert("Such station does not exist");
+            console.error(`${error.name}: ${error.message}`);
         }
     }
 
@@ -110,9 +112,16 @@ class Iaqi {
 
 const form = document.querySelector(".form");
 const input = document.querySelector(".form__content--input");
-const cityData = new Iaqi();
+const cityData = new Station();
 const responseSection = document.querySelector("#response");
 const geolocation = document.querySelector(".form__content--geolocation");
+const helper = document.querySelector(".aqi-index__helper");
+
+helper.addEventListener("click", () =>
+    alert(
+        "AQI is used by government agencies to communicate to the public how polluted the air currently is or how polluted it is forecast to become."
+    )
+);
 
 input.focus();
 form.addEventListener("submit", (e) => {
