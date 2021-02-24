@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="assets/css/style.min.css" />
+        <title>AQI finder</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="bg-container"></div>
+
+            <div class="right-content">
+                <div class="wrapper">
+                    <div id="input">
+                        <div class="form__container">
+                            <form class="form">
+                                <div class="form__content">
+                                    <input
+                                        class="form__content--input"
+                                        type="text"
+                                        name="cityName"
+                                        placeholder="Search..."
+                                        autocomplete="off"
+                                    /><span
+                                        class="form__content--search-icon"
+                                        type="submit"
+                                    ></span>
+                                </div>
+                                <div class="form__content--geolocation">
+                                    <div
+                                        class="form__content--geolocation__map"
+                                    ></div>
+                                    <div
+                                        class="form__content--geolocation__text"
+                                    >
+                                        or geolocate yourself instead
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="response">
+                        <div class="aqi-index">
+                            <div
+                                class="aqi-index__container aqi-index__container-hidden"
+                            >
+                                <div class="aqi-index__tag">aqi</div>
+                                <div
+                                    class="aqi-index__helper"
+                                    onclick="alert('AQI is used by government agencies to communicate to the public how polluted the air currently is or how polluted it is forecast to become.')"
+                                ></div>
+                                <div class="aqi-index__text">41</div>
+                                <span id="verdict">moderate pollution</span>
+                            </div>
+                            <div class="aqi-index__city">Milan, Italy</div>
+                        </div>
+
+                        <div class="additional-info">
+                            <div class="additional-info__item">
+                                <div class="additional-info__item__icon">
+                                    <img
+                                        src="assets/images/no2-icon.png"
+                                        alt="NO2 level"
+                                    />
+                                </div>
+                                <div
+                                    class="additional-info__item__text"
+                                    id="no2"
+                                >
+                                    36 ug/m3
+                                </div>
+                            </div>
+
+                            <div class="additional-info__item">
+                                <div class="additional-info__item__icon">
+                                    <img
+                                        src="assets/images/co2-icon.png"
+                                        alt="CO2 level"
+                                    />
+                                </div>
+                                <div
+                                    class="additional-info__item__text"
+                                    id="co2"
+                                >
+                                    36 ug/m3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="assets/js/main.bundle.js"></script>
+    </body>
+</html>

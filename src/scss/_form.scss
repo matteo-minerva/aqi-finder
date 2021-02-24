@@ -1,0 +1,70 @@
+.form {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+
+    &__content {
+        position: relative;
+        &--input {
+            width: 100%;
+            height: 3.125rem;
+            padding-left: 20px;
+
+            border-color: rgba($black, 0.8);
+            border-width: 1px;
+            outline: 0;
+            border-radius: 999rem;
+
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+            font-size: 1rem;
+            color: $black;
+
+            &::placeholder {
+                font-style: italic;
+            }
+
+            & + .form__content--search-icon {
+                display: inline-flex;
+                position: absolute;
+                align-items: center;
+                cursor: pointer;
+
+                width: 1.6rem;
+                height: 1.6rem;
+
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+
+                background-image: url(../images/magnifier-icon.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: 0 0;
+            }
+        }
+
+        &--geolocation {
+            padding-top: 0.8rem;
+            padding-left: 1.5rem;
+
+            display: flex;
+            align-items: center;
+
+            cursor: pointer;
+
+            &__map {
+                height: 1.875rem;
+                width: 1.875rem;
+
+                background-image: url(../images/map-icon.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: 0 0;
+            }
+            &__text {
+                font-size: 1rem;
+                padding-left: 0.5rem;
+            }
+        }
+    }
+}
