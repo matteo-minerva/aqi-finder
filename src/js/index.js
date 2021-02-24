@@ -90,6 +90,10 @@ class Station {
             if (response.data.data === "Over quota")
                 alert("Quota limit reached");
             if (response.data.data === "Invalid key") alert("Invalid API key");
+            if (response.data.data === "Unknown station")
+                alert(
+                    "The station you entered is unknown, please enter another one."
+                );
         } catch (error) {
             console.error(`${error.name}: ${error.message}`);
         }
