@@ -29,6 +29,9 @@ Si tratta di un'app che permette di ottenere informazioni sui livelli di inquina
 
 -   JavaScript
 -   [axios](https://www.npmjs.com/package/axios)
+-   [webpack](https://www.npmjs.com/package/webpack)
+-   [webpack-cli](https://www.npmjs.com/package/webpack-cli)
+-   [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack)
 
 <!-- CONTATTI -->
 
