@@ -15,7 +15,7 @@ class Station {
     setVerdict() {
         const { pm10 } = this.data;
         let verdict = "";
-        if (pm10 === null || pm10 === undefined) verdict = "N/A";
+        if (pm10 === "N/A") verdict = "info unavailable";
         if (pm10 >= 0 && pm10 <= 50) verdict = "good";
         if (pm10 >= 51 && pm10 <= 100) verdict = "moderate";
         if (pm10 >= 101 && pm10 <= 150)
