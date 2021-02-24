@@ -14,4 +14,5 @@ module.exports = {
         minimize: false,
     },
     watch: true,
+    mode: "production",
 };
