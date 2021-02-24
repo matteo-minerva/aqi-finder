@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">Air Quality Checker</h3>
+  <h3 align="center">AQI finder</h3>
 
   <p align="center">
     Progetto realizzato per la Super Guida JavaScript Advanced
@@ -22,13 +22,13 @@
 
 ## About
 
-<a href="https://aqi-finder.netlify.app/"><img src="https://i.imgur.com/JaEGWuv.png"/></a>
+<a href="https://aqi-finder.netlify.app/"><img src="https://i.imgur.com/8lUhDRD.png"/></a>
 Si tratta di un'app che permette di ottenere informazioni sui livelli di inquinamento di una città. Realizzata come progetto JavaScript Advanced per <a href="https://start2impact.it/">start2impact</a>.
 
 ### Realizzato con
 
--   [Bootstrap](https://getbootstrap.com/)
 -   JavaScript
+-   [axios](https://www.npmjs.com/package/axios)
 
 <!-- CONTATTI -->
 
